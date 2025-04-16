@@ -3,49 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/NotoSans-Medium.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/NotoSans-Regular.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/NotoSans-SemiBold.woff2" crossorigin/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="This is the testimonial section of the fictitious application"/>
+    <script defer>
+      window.addEventListener('load', () => {
+          const notoSansFont = new FontFace(
+            'Noto Sans',
+            'url(https://fonts.gstatic.com/s/notosans/v39/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a7du3mhPy0.woff2)',
+            {
+              display: "swap",
+              weight: "100 900",
+              style: 'normal',
+            }
+          );
+
+          notoSansFont.load()
+          .then(fontface => {
+            document.fonts.add(fontface);
+            document.body.style.fontFamily = 'Noto Sans';
+          })
+          .catch(err => {console.error(err)});
+      })
+    </script>
     <title>Testimonial Section</title>
 
     <style>
       @font-face {
-          font-family: "Noto Sans-fallback";
-          size-adjust: 106.55%;
-          ascent-override: 100%;
-          src: local("Arial");
-      }
-
-      @font-face {
-        font-family: 'Noto Sans';
-        font-weight: 500;
-        font-display: swap;
-        src: url('/fonts/NotoSans-Medium.woff2') format('woff2');
-      }
-
-      @font-face {
-        font-family: 'Noto Sans';
-        font-weight: 600;
-        font-display: swap;
-        src: url('/fonts/NotoSans-SemiBold.woff2') format('woff2');
+        font-family: 'Noto Sans Fallback';
+        size-adjust: 106%;
+        ascent-override: 100%;
+        src: local('Arial');
       }
       
-      @font-face {
-        font-family: 'Noto Sans';
-        font-weight: 400;
-        font-display: swap;
-        src: url('/fonts/NotoSans-Regular.woff2') format('woff2');
-      }
-
-
       html {
         font-size: 62.5%;
       }
 
       body {
-        font-family: 'Noto Sans', 'Noto Sans-fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:'Noto Sans Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 1.6rem;
       }
 
@@ -184,7 +179,7 @@
             platform. The variety and depth of creativity are astounding!</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail.avif" alt="Photo of Sarah Dole" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail.avif" alt="Photo of Sarah Dole" class="author-image">
             <div class="author-details">
               <strong class="bold">Sarah Dole</strong>
               <span class="author-link gray">@sarahdole</span>
@@ -198,7 +193,7 @@
             ignite my creativity like never before.</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_5.avif" alt="Photo of John Appleseed" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_5.avif" alt="Photo of John Appleseed" class="author-image">
             <div class="author-details">
               <strong class="bold">John Appleseed</strong>
               <span class="author-link gray">@johnaseed</span>
@@ -212,7 +207,7 @@
             way.</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_8.avif" alt="Photo of Jean Gray" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_8.avif" alt="Photo of Jean Gray" class="author-image">
             <div class="author-details">
               <strong class="bold">Jean Gray</strong>
               <span class="author-link gray">@jeniic</span>
@@ -226,7 +221,7 @@
             and sophistication to everything I create.</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_6.avif" alt="Photo of Jake Johnson" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_6.avif" alt="Photo of Jake Johnson" class="author-image">
             <div class="author-details">
               <strong class="bold">Jake Johnson</strong>
               <span class="author-link gray">@jakejohnshon</span>
@@ -240,7 +235,7 @@
             design workflow and elevated the quality of my work</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_3.avif" alt="Photo of Igor Stravinsky" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_3.avif" alt="Photo of Igor Stravinsky" class="author-image">
             <div class="author-details">
               <strong class="bold">Igor Stravinsky</strong>
               <span class="author-link gray">@igorstrav</span>
@@ -254,7 +249,7 @@
             goes into curating the collection.</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_4.avif" alt="Photo of Declan Rice" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_4.avif" alt="Photo of Declan Rice" class="author-image">
             <div class="author-details">
               <strong class="bold">Declan Rice</strong>
               <span class="author-link gray">@drice</span>
@@ -268,7 +263,7 @@
             are always impressed!</p>
           </blockquote>
           <figcaption class="testimonial-header">
-            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_2.avif" alt="Photo of Marcus Thompson" class="author-image">
+            <img width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_2.avif" alt="Photo of Marcus Thompson" class="author-image">
             <div class="author-details">
               <strong class="bold">Marcus Thompson</strong>
               <span class="author-link gray">@mthompson</span>
@@ -303,6 +298,7 @@
           </figcaption>
         </figure>
       </div>
+      
     </main>
   </body>
 </html>
