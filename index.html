@@ -2,12 +2,307 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/NotoSans-Medium.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/NotoSans-Regular.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/NotoSans-SemiBold.woff2" crossorigin/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="This is the testimonial section of the fictitious application"/>
     <title>Testimonial Section</title>
+
+    <style>
+      @font-face {
+          font-family: "Noto Sans-fallback";
+          size-adjust: 106.55%;
+          ascent-override: 100%;
+          src: local("Arial");
+      }
+
+      @font-face {
+        font-family: 'Noto Sans';
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/NotoSans-Medium.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Noto Sans';
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/NotoSans-SemiBold.woff2') format('woff2');
+      }
+      
+      @font-face {
+        font-family: 'Noto Sans';
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/NotoSans-Regular.woff2') format('woff2');
+      }
+
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: 'Noto Sans', 'Noto Sans-fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.6rem;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .sr-only {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+      }
+
+      .author-image {
+        border-radius: 1000px;
+      }
+
+      .regular {
+          font-weight: 400;
+      }
+
+      .bold {
+        font-weight: 600;
+      }
+
+      .medium {
+        font-weight: 500;
+      }
+
+      .blue {
+        color: blue;
+      }
+
+      .black {
+        color: black;
+      }
+
+      .gray {
+        color: rgb(73, 73, 73);
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      h1, .subheading-1, .subheading-2 {
+        text-align: center;
+      }
+
+      .subheading-1 {
+        font-size: clamp(2.5rem, 4vw, 3rem);
+        margin-inline: 20px;
+        margin-block: 15px;
+      }
+
+      .subheading-2 {
+        margin-inline: 20px;
+      }
+
+      h1 {
+        font-size: clamp(1.3rem, 3vw, 1.6rem);
+      }
+
+      body {
+        display: grid;
+        grid-template-columns: 1fr clamp(0px, 90vw, 1200px) 1fr;
+
+        padding-block: 60px;
+      }
+
+      main {
+        grid-column: 2 / 3;
+      }
+
+
+      .testimonials-container {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-rows: repeat(2, auto);
+        column-gap: 40px;
+        row-gap: 40px;
+      }
+
+      .testimonial-card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+        row-gap: 20px;
+
+        padding-inline: clamp(10px, 5%, 30px);
+        padding-block: 30px;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.308);
+        border-radius: 0.5em;
+      }
+
+      .testimonial-header {
+        grid-row: 1 / 2;
+
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+      }
+
+      .author-details {
+        display: grid;
+        row-gap: 5px;
+
+      }
+
+      .author-link {
+        font-size: 1.4rem;
+      }
+
+      blockquote {
+        grid-row: 2 / 3;
+      }
+
+    </style>
   </head>
   <body>
-    <script type="module" src="/src/main.ts"></script>
+    <main>
+      <h1 class="regular bold blue">Testimonials</h1>
+      <p class="subheading-1 bold">Countless users, countless smiles</p>
+      <p class="subheading-2 regular gray">Explore our community's journey and discover why satisfaction defines us.</p>
+      <div class="testimonials-container">
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Sarah Dole</span>
+          <blockquote>
+            <p class="gray">I've been searching for high-quality abstract images for my design projects, and I'm thrilled to have found this
+            platform. The variety and depth of creativity are astounding!</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail.avif" alt="Photo of Sarah Dole" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Sarah Dole</strong>
+              <span class="author-link gray">@sarahdole</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Jake Appleseed</span>
+          <blockquote>
+            <p class="gray">As an artist, finding inspiration is crucial. This platform has become my go-to source for unique abstract images that
+            ignite my creativity like never before.</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_5.avif" alt="Photo of John Appleseed" class="author-image">
+            <div class="author-details">
+              <strong class="bold">John Appleseed</strong>
+              <span class="author-link gray">@johnaseed</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Jean Gray</span>
+          <blockquote>
+            <p class="gray">I never thought I'd find such stunning abstract images for free! This platform has exceeded my expectations in every
+            way.</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_8.avif" alt="Photo of Jean Gray" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Jean Gray</strong>
+              <span class="author-link gray">@jeniic</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Jake Johnson</span>
+          <blockquote>
+            <p class="gray">From corporate presentations to personal projects, the abstract images on this platform have added a touch of elegance
+            and sophistication to everything I create.</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_6.avif" alt="Photo of Jake Johnson" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Jake Johnson</strong>
+              <span class="author-link gray">@jakejohnshon</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Igor Stravinsky</span>
+          <blockquote>
+            <p class="gray">The subscription plans are worth every penny. Having unlimited access to premium abstract images has transformed my
+            design workflow and elevated the quality of my work</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_3.avif" alt="Photo of Igor Stravinsky" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Igor Stravinsky</strong>
+              <span class="author-link gray">@igorstrav</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Declan Rice</span>
+          <blockquote>
+            <p class="gray">I'm amazed by the attention to detail in every image on this platform. It's clear that a lot of thought and creativity
+            goes into curating the collection.</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_4.avif" alt="Photo of Declan Rice" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Declan Rice</strong>
+              <span class="author-link gray">@drice</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Marcus Thompson</span>
+          <blockquote>
+            <p class="gray">Using abstract images from this platform has helped me convey complex concepts in a visually engaging way. My clients
+            are always impressed!</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_2.avif" alt="Photo of Marcus Thompson" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Marcus Thompson</strong>
+              <span class="author-link gray">@mthompson</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Oliver Neverloved</span>
+          <blockquote>
+            <p class="gray">I appreciate how user-friendly the platform is. Browsing, downloading, and managing my image library couldn't be easier.</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_7.avif" alt="Photo of Oliver Neverloved" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Oliver Neverloved</strong>
+              <span class="author-link gray">@olivernever</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure tabindex="0" class="testimonial-card">
+          <span class="sr-only">Testimonial of Mark Dennis</span>
+          <blockquote>
+            <p class="gray">The customer support team went above and beyond to help me with a subscription issue. Their dedication to customer
+            satisfaction is truly commendable</p>
+          </blockquote>
+          <figcaption class="testimonial-header">
+            <img loading="lazy" width="50px" height="50px" style="object-fit: cover;" src="/images/profile-thumbnail_1.avif" alt="Photo of  Mark Dennis" class="author-image">
+            <div class="author-details">
+              <strong class="bold">Mark Dennis</strong>
+              <span class="author-link gray">@marked</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </main>
   </body>
 </html>
